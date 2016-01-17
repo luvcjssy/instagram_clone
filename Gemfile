@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.1.10'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -22,4 +21,11 @@ gem 'kaminari', '~> 0.16.3'
 gem 'jquery-turbolinks'
 gem 'simple_hashtag', '~> 0.1.9'
 gem 'papercrop'
-gem 'sqlite3'
+
+group :development do
+	gem 'sqlite3'
+end
+
+group :production do
+	gem 'pg'
+end	
