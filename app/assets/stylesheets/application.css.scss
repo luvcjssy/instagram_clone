@@ -1,0 +1,287 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require 'masonry/transitions'
+ *= require jquery.jcrop
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@font-face{
+  font-family:'Glyphicons Halflings';
+  src: image-url("bootstrap/glyphicons-halflings-regular.eot");
+  src: image-url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),
+       image-url("bootstrap/glyphicons-halflings-regular.woff") format("woff"),
+       image-url("bootstrap/glyphicons-halflings-regular.ttf") format("truetype"),
+       image-url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
+}
+
+body{
+	background: #E9E9E9;;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 100;
+}
+
+nav {
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	.navbar-brand {
+		a {
+			color: #BD1E23;
+			font-weight: bold;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+#posts {
+	margin: 0 auto;
+	width: 100%;
+	.box {
+		margin: 10px;
+		width: 350px;
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+		border-radius: 7px;
+		text_align: center;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		h2 {
+			border-bottom: 1px solid #EAEAEA;			
+			font-size: 22px;
+			margin: 0;
+			padding: 25px 10px;
+			a {
+				color: #474747;
+			}
+			margin-bottom: 11px !important;
+		}
+		.user {
+			font-size: 12px;
+			padding: 15px;
+			margin: 0;
+
+		}
+	}
+}
+
+#edit_page {
+	.current_image {
+		img {
+			display: block;
+			margin: 20px 0;
+		}
+	}
+}
+
+#post_show {
+	.pannel-heading {
+		padding: 0;
+	}
+	.post_image {
+		img {
+			max-width: 100%;
+			width: 100%;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.pannel-body {
+		padding: 35px;
+		h1 {
+			margin: 0 0 10px 0;
+		}
+		.description {
+			color: #868686;
+			line-height: 1.75;
+			margin: 0;
+		}
+	}
+	.panel-footer {
+		padding: 20px 35px;
+		p {
+			margin: 0;
+		}
+		.user {
+			padding-top: 8px;
+		}
+	}
+}
+
+.user {
+	img {
+		width: 29px;
+		height: 29px;
+		border-radius: 50%;
+	}
+}
+
+.title {
+	padding-bottom: 10px;
+	font-size: 15px;
+	line-height: 18px;
+}
+
+.post-top {
+	padding-top: 30px;
+}
+
+.post-bottom {
+	margin-bottom: 50px;
+}
+
+.comment-like-form {
+	padding-top: 24px;
+	margin-top: 13px;
+	margin-left: 24px;
+	margin-right: 24px;
+	min-height: 68px;
+	align-items: center;
+	border-top: 1px solid #EEEFEF;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.like-button a:hover, a:focus {
+	text-decoration: none;
+	color: red;
+}
+
+.comments {
+	.paginator {
+		margin: 0.5em;
+		.more-comments {
+			color: #A5A7AA;
+		}
+	}
+}
+
+.comment_content {
+	background-color: #f5f5f5;
+	font-size: 15px;
+	line-height: 18px;
+	border: medium none;
+	width: 100%;
+	color: #4B4F54;
+}
+
+.delete-comment {
+	float: right;
+	color: #515151;
+}
+
+.user {
+	display: inline;
+}
+
+.time-ago {
+	float: right;
+	line-height: 25px;
+}
+
+#paginator {
+	color: #4090DB;
+	height: 120px;
+	width: 120px;
+	margin: 60px auto 40px;
+	position: relative;
+	display: table;
+	border: 2px solid #4090DB;
+	border-radius: 50%;
+	:hover {
+		border: 1px solid #2D6DA8;
+		border-radius: 50%;
+	}
+}
+
+#load_more {
+	display: table-cell;
+	font-size: 12px;
+	padding: 0px 9px;
+	vertical-align: middle;
+	text-decoration: none;
+	a :hover {
+		color: #2D6DA8;
+	}
+}
+
+#user_avatar {
+	margin: 20px auto;
+}
+
+.profile-header {
+	padding: 20px 0;
+}
+
+.profile-image {
+	margin: 20px auto;
+	height: 152px;
+	width: 152px;
+}
+
+.user-name-and-follow {
+	display: inline;
+}
+
+.profile-user-name {
+	display: inline;
+}
+
+.edit-button {
+	border-color: #818488;
+	color: #818488;
+	margin-left: 20px;
+}
+
+.profile-bio {
+	margin-top: 20px;
+}
+
+.img-circle {
+	img{
+		
+		border-radius: 50%;
+	}
+	#image-preview {
+		width: 200px;
+		height: 200px;
+	}
+}
+.img-show{
+	float: right;
+}
+
+.likes {
+	a {
+		font-weight: bold;
+	}
+	margin-bottom: 7px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.comment span {
+    background-image: url("delete.png");
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+}
+	

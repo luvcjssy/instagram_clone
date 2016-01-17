@@ -1,0 +1,6 @@
+%p.comment
+  %b= link_to comment.user.user_name, profile_path(comment.user.user_name)
+  = linkify_hashtags(comment.content)
+  - if comment.user == current_user
+    = link_to post_comment_path(post, comment), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do
+      %span.delete-comment

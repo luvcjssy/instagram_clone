@@ -1,0 +1,10 @@
+<h1>Crop Image</h1>
+<% content_for(:head) do %>
+	<script type="text/javascript">
+		$(function(){
+			$("#cropbox").Jcrop();
+		});
+	</script>
+<% end %>
+
+<%= image_tag @post.image.url(:large), :id => 'cropbox' %>

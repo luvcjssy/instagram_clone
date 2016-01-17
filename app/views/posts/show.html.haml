@@ -1,0 +1,12 @@
+#post_show.row
+	.col-md-8.col-md-offset-2.post-top
+		= render 'post', post: @post
+		- if @post.user == current_user
+			.text-center
+				= link_to 'Cancel', root_path
+				|
+				= link_to 'Edit Post', edit_post_path
+		- else
+			.text-center
+				= link_to 'Cancel', root_path
+

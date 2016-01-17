@@ -1,0 +1,10 @@
+.col-md-6.col-md-offset-3
+	.row
+		.panel.panel-default
+			.panel-heading
+				%h1.text-center New Post
+			.panel-body
+				.text-center
+					= image_tag 'default.jpg', id: 'image-preview', style: 'width: 50%'
+				%br/
+				= render 'form'
