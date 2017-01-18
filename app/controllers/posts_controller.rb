@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index, :show, :vietlot]
 	before_action :find_post, only: [:show, :edit, :update, :destroy, :like]
 	before_action :owned_post, only: [:edit, :update, :destroy]
 	
@@ -51,6 +51,30 @@ class PostsController < ApplicationController
 				format.js
 			end
 		end
+	end
+
+	def vietlot
+		arr = []
+		lucky = []
+
+		url = 'http://vietlott.vn/vi/trung-thuong/ket-qua-trung-thuong/mega-6-45/winning-numbers/'
+		page = Mechanize.new.get(url)
+
+		days = page.search('.table-striped tbody tr')
+		days.each do |day|
+			numbers = day.search('td span')
+			numbers.each do |number|
+				arr.push(number.text)
+			end
+		end
+
+		loop do
+			ln = arr.sample
+			lucky.push(ln) unless lucky.include? ln
+			break if lucky.size == 5
+		end
+
+		render json: arr
 	end
 
 	private

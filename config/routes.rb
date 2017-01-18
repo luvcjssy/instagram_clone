@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   	resources :comments
   	member do
   		get 'like'
-  	end
+    end
+    collection do
+      get :vietlot
+    end
   end
   
   root 'posts#index'
