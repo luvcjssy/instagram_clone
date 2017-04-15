@@ -20,4 +20,4 @@ bundle exec rake db:migrate
 rails s
 ```
 
-Link demo: https://frozen-stream-3767.herokuapp.com/
+Link demo: http://instagrams-clone.herokuapp.com/
