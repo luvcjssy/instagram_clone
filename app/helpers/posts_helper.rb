@@ -31,5 +31,5 @@ module PostsHelper
   def like_plural(votes)
     return ' like this' if votes.count > 1
     ' likes this'
-    end
+  end
 end
