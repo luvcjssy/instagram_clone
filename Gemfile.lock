@@ -55,11 +55,15 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    domain_name (0.5.20170404)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
     haml (4.0.7)
       tilt
     hike (1.2.3)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (0.7.0)
     jbuilder (2.4.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -78,10 +82,25 @@ GEM
       mime-types (>= 1.16, < 3)
     masonry-rails (0.2.4)
       railties
+    mechanize (2.7.5)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (>= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.6)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
     mime-types (2.99)
     mimemagic (0.3.0)
+    mini_portile2 (2.1.0)
     minitest (5.8.3)
     multi_json (1.11.2)
+    net-http-digest_auth (1.4.1)
+    net-http-persistent (2.9.4)
+    nokogiri (1.7.1)
+      mini_portile2 (~> 2.1.0)
+    ntlm-http (0.1.1)
     orm_adapter (0.5.0)
     paperclip (4.3.2)
       activemodel (>= 3.2.0)
@@ -157,8 +176,12 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.3)
     warden (1.2.4)
       rack (>= 1.0)
+    webrobots (0.1.2)
 
 PLATFORMS
   ruby
@@ -175,6 +198,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari (~> 0.16.3)
   masonry-rails (~> 0.2.4)
+  mechanize
   paperclip (~> 4.3)
   papercrop
   pg
@@ -190,4 +214,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.10.6
+   1.14.6
