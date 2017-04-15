@@ -10,9 +10,6 @@ Rails.application.routes.draw do
   	member do
   		get 'like'
     end
-    collection do
-      get :vietlot
-    end
   end
   
   root 'posts#index'
