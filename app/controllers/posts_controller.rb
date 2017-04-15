@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show, :vietlot]
+	before_action :authenticate_user!, except: [:index, :show]
 	before_action :find_post, only: [:show, :edit, :update, :destroy, :like]
 	before_action :owned_post, only: [:edit, :update, :destroy]
 	
 	def index
-		@posts = Post.all.order('created_at DESC').page params[:page]
+		@posts = Post.all.order(created_at: :desc).page params[:page]
 	end
 
 	def show
@@ -18,10 +18,10 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build(post_params)
 
 		if @post.save
-			flash[:success] = "Successfully created new Post!"
+			flash[:success] = 'Successfully created new Post!'
 			redirect_to @post
 		else
-			flash.now[:alert] = "Create new Post failed!"
+			flash.now[:alert] = 'Create new Post failed!'
 			render 'new'
 		end 
 	end
@@ -31,10 +31,10 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update(post_params)
-			flash[:success] = "Post was successfully updated!"
+			flash[:success] = 'Post was successfully updated!'
 			redirect_to @post
 		else
-			flash.now[:alert] = "Update Post failed!"
+			flash.now[:alert] = 'Update Post failed!'
 			render 'edit'
 		end
 	end
@@ -44,6 +44,7 @@ class PostsController < ApplicationController
 		redirect_to root_path
 	end
 
+  # Like image feature
 	def like
 		if @post.liked_by current_user
 			respond_to do |format|
