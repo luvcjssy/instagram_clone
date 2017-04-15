@@ -1,31 +1,31 @@
 .posts-wrapper
-	.row.profile-header
-		.col-md-6
-			.img-circle.img-show
-				- img_src = @user.avatar.exists? ? @user.avatar.url(:medium) : 'avatar.png'
-				= image_tag img_src
-		.col-md-6
-			.user-name-and-follow
-				%h3.profile-user-name
-					= @user.user_name
-				%span
-					- if @user == current_user
-						= link_to 'Edit Profile', edit_profile_path(@user.user_name), class: 'btn edit-button'
-			%p.profile-bio
-				= @user.bio
-			.user-statistics
-				%p
-					= pluralize @user.posts.count, 'post'
+  .row.profile-header
+    .col-md-6
+      .img-circle.img-show
+        - img_src = @user.avatar.exists? ? @user.avatar.url(:medium) : 'avatar.png'
+        = image_tag img_src
+    .col-md-6
+      .user-name-and-follow
+        %h3.profile-user-name
+          = @user.user_name
+        %span
+          - if @user == current_user
+            = link_to 'Edit Profile', edit_profile_path(@user.user_name), class: 'btn edit-button'
+      %p.profile-bio
+        = @user.bio
+      .user-statistics
+        %p
+          = pluralize @user.posts.count, 'post'
 
 #posts.transitions-enabled
-	- @posts.each do |post|
-		.box.panel.panel-default
-			= link_to (image_tag post.image.url), post
-			.panel-body
-				%h2= link_to post.title, post
-				%p.user
-					= post.votes_for.size
-					likes
-				%p.user
-					= post.comments.size
-					comments 
+  - @posts.each do |post|
+    .box.panel.panel-default
+      = link_to (image_tag post.image.url), post
+      .panel-body
+        %h2= link_to post.title, post
+        %p.user
+          = post.votes_for.size
+          likes
+        %p.user
+          = post.comments.size
+          comments

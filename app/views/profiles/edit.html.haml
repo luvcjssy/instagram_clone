@@ -1,27 +1,27 @@
 .col-md-6.col-md-offset-3
-	.row
-		.panel.panel-default
-			.panel-heading
-				%h1.text-center Update Profile
-			.panel-body
-				.text-center
-					.post-wrapper
-						.post
-							.post-body
-								.image-wrap
-									= form_for @user, url: { action: 'update' }, html: { multipart: true } do |f|
-										.row
-											.col-md-12
-												.form-group.text-center
-													%h4 Change your avatar
-													.img-circle
-														- img_src = @user.avatar.exists? ? @user.avatar.url(:medium) : 'avatar.png'
-														= image_tag img_src, id: 'image-preview'
-													= f.file_field :avatar, label: false, onChange: 'loadFile(event)'
-										.row
-											.col-md-12
-												.form-group.text-center
-													%h4 Update your bio
-													= f.text_area :bio, label: false, rows: 4, class: 'form-control' 
-										.form-group.text-center
-											= f.submit 'Update Profile', class: 'btn btn-primary'
+  .row
+    .panel.panel-default
+      .panel-heading
+        %h1.text-center Update Profile
+      .panel-body
+        .text-center
+          .post-wrapper
+            .post
+              .post-body
+                .image-wrap
+                  = form_for @user, url: { action: 'update' }, html: { multipart: true } do |f|
+                    .row
+                      .col-md-12
+                        .form-group.text-center
+                          %h4 Change your avatar
+                          .img-circle
+                            - img_src = @user.avatar.exists? ? @user.avatar.url(:medium) : 'avatar.png'
+                            = image_tag img_src, id: 'image-preview'
+                          = f.file_field :avatar, label: false, onChange: 'loadFile(event)'
+                    .row
+                      .col-md-12
+                        .form-group.text-center
+                          %h4 Update your bio
+                          = f.text_area :bio, label: false, rows: 4, class: 'form-control' 
+                    .form-group.text-center
+                      = f.submit 'Update Profile', class: 'btn btn-primary'

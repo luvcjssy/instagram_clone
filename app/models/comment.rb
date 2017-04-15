@@ -1,8 +1,8 @@
 class Comment < ActiveRecord::Base
-	include SimpleHashtag::Hashtaggable
+  include SimpleHashtag::Hashtaggable
 
-	hashtaggable_attribute :content
+  hashtaggable_attribute :content
 
-	belongs_to :user
-	belongs_to :post
+  belongs_to :user
+  belongs_to :post
 end
