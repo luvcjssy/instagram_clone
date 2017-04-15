@@ -15,10 +15,8 @@
 												.form-group.text-center
 													%h4 Change your avatar
 													.img-circle
-														- if @user.avatar.exists?
-															= image_tag @user.avatar.url(:medium), id: 'image-preview'
-														- else
-															= image_tag 'avatar.png', id: 'image-preview'
+														- img_src = @user.avatar.exists? ? @user.avatar.url(:medium) : 'avatar.png'
+														= image_tag img_src, id: 'image-preview'
 													= f.file_field :avatar, label: false, onChange: 'loadFile(event)'
 										.row
 											.col-md-12
@@ -27,4 +25,3 @@
 													= f.text_area :bio, label: false, rows: 4, class: 'form-control' 
 										.form-group.text-center
 											= f.submit 'Update Profile', class: 'btn btn-primary'
-

@@ -2,10 +2,8 @@
 	.row.profile-header
 		.col-md-6
 			.img-circle.img-show
-				- if @user.avatar.exists?
-					= image_tag @user.avatar.url(:medium)
-				- else
-					= image_tag 'avatar.png'
+				- img_src = @user.avatar.exists? ? @user.avatar.url(:medium) : 'avatar.png'
+				= image_tag img_src
 		.col-md-6
 			.user-name-and-follow
 				%h3.profile-user-name
