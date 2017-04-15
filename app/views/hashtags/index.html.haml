@@ -1,4 +1,6 @@
-%h1 Hashtags
-%ul
-  - @hashtags.each do |hashtag|
-    %li= link_to hashtag.name, hashtag_path(hashtag.name)
+.row
+  .col-md-8.col-md-offset-2.post-top
+    %h1 Hashtags
+    %ul
+      - @hashtags.each do |hashtag|
+        %li= link_to hashtag.name, hashtag_path(hashtag.name)
