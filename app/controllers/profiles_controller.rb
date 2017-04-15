@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :find_user
+  before_action :check_user, only: [:edit, :update]
 
   def show
     @posts = @user.posts.order(created_at: :desc)
@@ -14,7 +15,7 @@ class ProfilesController < ApplicationController
       flash[:success] = 'Your profile has been updated!'
       redirect_to profile_path(@user.user_name)
     else
-      flash[:error] = 'Update your profile failed!'
+      flash.now[:alert] = 'Update your profile failed!'
       render 'edit'
     end
   end
@@ -30,6 +31,14 @@ class ProfilesController < ApplicationController
 
     unless @user
       flash[:alert] = "That user doesn't exist!"
+      redirect_to root_path
+    end
+  end
+
+  # Check account logged in with account which want to update info
+  def check_user
+    unless @user == current_user
+      flash[:alert] = "You don't have permission to access this page."
       redirect_to root_path
     end
   end
