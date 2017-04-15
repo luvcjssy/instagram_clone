@@ -1,8 +1,9 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update]
   before_action :find_user
 
   def show
-  	@posts = @user.posts.order('created_at DESC')
+  	@posts = @user.posts.order(created_at: :desc)
   end
 
   def edit
@@ -26,6 +27,10 @@ class ProfilesController < ApplicationController
 
   def find_user
   	@user = User.find_by(user_name: params[:user_name])
-  end
 
+    unless @user
+      flash[:alert] = "That user doesn't exist!"
+      redirect_to root_path
+    end
+  end
 end
