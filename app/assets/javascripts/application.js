@@ -9,7 +9,7 @@
 //= require_tree .
 
 /* Load image after choosing */
-var loadFile = function(event) {  
+var loadFile = function(event) {
   var output = document.getElementById('image-preview');
   output.src = URL.createObjectURL(event.target.files[0]);
 };

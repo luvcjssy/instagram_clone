@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	before_action :find_post, only: [:show, :edit, :update, :destroy, :like]
 	before_action :owned_post, only: [:edit, :update, :destroy]
-	
+
 	def index
 		@posts = Post.all.order(created_at: :desc).page params[:page]
 	end
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 		else
 			flash.now[:alert] = 'Create new Post failed!'
 			render 'new'
-		end 
+		end
 	end
 
 	def edit
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 		redirect_to root_path
 	end
 
-  # Like image feature
+	# Like image feature
 	def like
 		if @post.liked_by current_user
 			respond_to do |format|
@@ -59,7 +59,7 @@ class PostsController < ApplicationController
 	def post_params
 		params.require(:post).permit(:title, :image)
 	end
-	
+
 	def find_post
 		@post = Post.find(params[:id])
 	end
@@ -67,7 +67,7 @@ class PostsController < ApplicationController
 	def owned_post
 		unless current_user == @post.user
 			flash[:alert] = "That post doesn't belongs to you!"
-    		redirect_to root_path
+			redirect_to root_path
 		end
 	end
 end
