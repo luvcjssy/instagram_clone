@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
         format.js
       end
     else
-      render root_path
+      redirect_to root_path
     end
   end
 
