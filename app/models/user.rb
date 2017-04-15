@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
-  validates :user_name, presence: true, length: { minimum: 4, maximum: 16 }
+  validates :user_name, presence: true, format: { without: /\s/ }, length: { minimum: 4, maximum: 16 }
   validates_uniqueness_of :user_name
 
   has_many :posts, dependent: :destroy
