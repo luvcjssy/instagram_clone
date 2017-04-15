@@ -19,7 +19,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@font-face{
+@font-face {
   font-family:'Glyphicons Halflings';
   src: image-url("bootstrap/glyphicons-halflings-regular.eot");
   src: image-url("bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"),
@@ -28,8 +28,8 @@
        image-url("bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg")
 }
 
-body{
-	background: #E9E9E9;;
+body {
+  background: #E9E9E9;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,21 +57,26 @@ nav {
 		width: 350px;
 		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 		border-radius: 7px;
-		text_align: center;
+		text-align: center;
+
 		img {
 			max-width: 100%;
 			height: auto;
 		}
+
 		h2 {
 			border-bottom: 1px solid #EAEAEA;			
 			font-size: 22px;
 			margin: 0;
 			padding: 25px 10px;
+
 			a {
 				color: #474747;
 			}
+
 			margin-bottom: 11px !important;
 		}
+
 		.user {
 			font-size: 12px;
 			padding: 15px;
@@ -94,6 +99,7 @@ nav {
 	.pannel-heading {
 		padding: 0;
 	}
+
 	.post_image {
 		img {
 			max-width: 100%;
@@ -102,22 +108,27 @@ nav {
 			margin: 0 auto;
 		}
 	}
+
 	.pannel-body {
 		padding: 35px;
-		h1 {
+    h1 {
 			margin: 0 0 10px 0;
 		}
+
 		.description {
 			color: #868686;
 			line-height: 1.75;
 			margin: 0;
 		}
 	}
+
 	.panel-footer {
 		padding: 20px 35px;
+
 		p {
 			margin: 0;
 		}
+
 		.user {
 			padding-top: 8px;
 		}
@@ -255,9 +266,9 @@ nav {
 
 .img-circle {
 	img{
-		
 		border-radius: 50%;
 	}
+
 	#image-preview {
 		width: 200px;
 		height: 200px;
@@ -283,4 +294,3 @@ a:hover {
     height: 16px;
     margin-top: 1px;
 }
-	
