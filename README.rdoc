@@ -1,29 +1,22 @@
-== README
+== App for image sharing social network
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installing
 
-Things you may want to cover:
+```
+$ cd instagram_clone
+$ bundle install
+```
 
-* Ruby version
+## Create database
 
-* System dependencies
+```
+bundle exec rake db:migrate
+```
 
-* Configuration
+## Run on Development mode
 
-* Database creation
+```
+rails s
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-demo: https://frozen-stream-3767.herokuapp.com/
+Link demo: https://frozen-stream-3767.herokuapp.com/
