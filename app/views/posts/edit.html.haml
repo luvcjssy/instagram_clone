@@ -7,7 +7,7 @@
 				.text-center 
 					%strong Current Image
 				%br/
-				.text-center= image_tag @post.image.url(:medium), id: 'image-preview', style: 'width: 50%;'
+				.text-center= image_tag @post.image.url(:medium), id: 'image-preview'
 				%br/
 				= render 'form'
 		.text-center
