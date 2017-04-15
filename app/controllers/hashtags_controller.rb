@@ -1,5 +1,4 @@
 class HashtagsController < ApplicationController
-
   def index
     @hashtags = SimpleHashtag::Hashtag.all
   end
@@ -10,7 +9,7 @@ class HashtagsController < ApplicationController
 
     # Get hashtag after click
     @hashtag = SimpleHashtag::Hashtag.find_by_name(params[:hashtag])
-    return Post.none if @hashtag.nil?
+    return nil if @hashtag.nil?
 
     # Get all posts and comments contain that hashtag
     @hashtagged = @hashtag.hashtaggables if @hashtag
