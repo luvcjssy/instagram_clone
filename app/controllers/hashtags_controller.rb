@@ -17,7 +17,7 @@ class HashtagsController < ApplicationController
     # Check hashtag belongs to Post or Comment
     # If hashtag belongs to Comment (It contains post_id field)
     # get post_id and push into array
-    # If hashtag belongs to Post, just push hashtag'id into array (hastag is a Post object)
+    # If hashtag belongs to Post, just push hashtag's id into array (hastag is a Post object)
     @hashtagged.each do |hashtag|
       if hashtag.class.method_defined? :post_id
         unless post_ids.include? hashtag.post_id
