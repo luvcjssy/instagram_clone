@@ -1,4 +1,5 @@
-== App for image sharing social network
+# App for image sharing social network
+---
 
 ## Installing
 
